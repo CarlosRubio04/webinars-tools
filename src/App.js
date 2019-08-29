@@ -4,6 +4,7 @@ import { Router } from '@reach/router'
 import { NavBar } from './components/NavBar'
 
 import { Home } from './pages/Home'
+import { Inscription } from './pages/Incription'
 
 export const App = () => {
   return (
@@ -12,6 +13,7 @@ export const App = () => {
       <NavBar />
       <Router>
         <Home path='/' />
+        <Inscription path='/inscription' />
       </Router>
     </div>
   )
