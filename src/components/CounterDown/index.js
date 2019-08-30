@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Counter } from './styles'
 
 const getRemainingTime = ({ deadline }) => {
   const now = new Date()
@@ -33,10 +34,15 @@ export const CounterDown = (deadline) => {
     <div>
       {
         start
-          ? <p>Ya está</p>
-          : <div><p>{ acTime.remainHours }</p>
-            <p>{ acTime.remainMinutes }</p>
-            <p>{ acTime.remainSeconds }</p></div>
+          ? <p>Iniciando Transmisión...</p>
+          : <Counter>
+            <h4>Nuestro Webinar Empezará en</h4>
+            <div className='Counter-container'>
+              <div className='item'>{ acTime.remainHours } <span>:</span></div>
+              <div className='item'>{ acTime.remainMinutes } <span>:</span></div>
+              <div className='item'>{ acTime.remainSeconds }</div>
+            </div>
+          </Counter>
       }
     </div>
   )
