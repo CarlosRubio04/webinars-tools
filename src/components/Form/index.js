@@ -1,7 +1,7 @@
 import React from 'react'
 import { useInputValue } from '../../hooks/useInputValue'
 
-export const Form = ({ onSubmit, success }) => {
+export const Form = ({ onSubmit }) => {
   const email = useInputValue('')
   const company = useInputValue('')
   const employs = useInputValue('')
@@ -18,9 +18,6 @@ export const Form = ({ onSubmit, success }) => {
   }
   return (
     <div className='Form'>
-      {
-        success ? '' : <p>Para participar desbes estar registrado <a href='https://pages.acsendo.com/webinar-transformacion-digital-rrhh' target='_blank'>aquí</a> </p>
-      }
       <form onSubmit={handleSubmit}>
         <div className='Form_Input'>
           <input {...email} placeholder='Email' />
@@ -51,7 +48,7 @@ export const Form = ({ onSubmit, success }) => {
             <option value='+500'>+500</option>
           </select>
         </div>
-        <div className='Form_Input'>
+        <div className='Form_Submit'>
           <button type='submit' className='Main-Button'>Enviar</button>
         </div>
       </form>

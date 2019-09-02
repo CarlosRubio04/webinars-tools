@@ -38,8 +38,8 @@ export const CounterDown = (deadline) => {
           : <Counter>
             <h4>Nuestro Webinar Empezará en</h4>
             <div className='Counter-container'>
-              <div className='item'>{ acTime.remainHours } <span>:</span></div>
-              <div className='item'>{ acTime.remainMinutes } <span>:</span></div>
+              <div className='item'>{ acTime.remainHours } <span>-</span></div>
+              <div className='item'>{ acTime.remainMinutes } <span>-</span></div>
               <div className='item'>{ acTime.remainSeconds }</div>
             </div>
           </Counter>

@@ -5,20 +5,22 @@ import { Winner } from '../Winner'
 
 export const Random = () => {
   const [winner, setWinner] = useState('')
+  const [loading, setLoading] = useState(false)
   let data = []
-  const from = 1
-  let to = 1
   const nameRef = firebase.database().ref('/participants/')
   nameRef.on('value', snapshot => {
     data = Object.values(snapshot.val())
-    to = data.length
   })
 
   const generateNumber = () => {
-    const number = Math.floor(Math.random() * (from - to + 1) + to)
-    const user = data[number]
+    setLoading(true)
+    const filterUsers = data.filter(user => user.jobTitle !== 'Otro' && user.employs !== '1-10' && user.country.toLowerCase() !== 'venezuela' | 've' | 'vzla' | 'vza')
+    console.log(filterUsers)
+    const to = filterUsers.length
+    const number = Math.floor(Math.random() * (1 - to + 1) + to)
+    const user = filterUsers[number]
     console.log(number, user)
-    setWinner(user)
+    setTimeout(() => setWinner(user), 2000)
   }
 
   if (winner) {
@@ -26,6 +28,9 @@ export const Random = () => {
     return (
       <Winner winner={winner} />
     )
+  }
+  if (loading) {
+    return (<p>....</p>)
   }
   return (
     <button className='Main-Button' onClick={generateNumber}>Go</button>
