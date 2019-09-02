@@ -1,18 +1,36 @@
 import React from 'react'
+import { useInputValue } from '../../hooks/useInputValue'
 
-export const Form = () => {
+export const Form = ({ onSubmit, success }) => {
+  const email = useInputValue('')
+  const company = useInputValue('')
+  const employs = useInputValue('')
+  const jobTitle = useInputValue('')
+
+  const handleSubmit = (event) => {
+    event.preventDefault()
+    onSubmit({
+      email: email.value,
+      company: company.value,
+      jobTitle: jobTitle.value,
+      employs: employs.value
+    })
+  }
   return (
     <div className='Form'>
-      <form>
+      {
+        success ? '' : <p>Para participar desbes estar registrado <a href='https://pages.acsendo.com/webinar-transformacion-digital-rrhh' target='_blank'>aquí</a> </p>
+      }
+      <form onSubmit={handleSubmit}>
         <div className='Form_Input'>
-          <input name='email' placeholder='Email' />
+          <input {...email} placeholder='Email' />
         </div>
         <div className='Form_Input'>
-          <input name='company' placeholder='Nombre de la Empresa' />
+          <input {...company} placeholder='Nombre de la Empresa' />
         </div>
         <div className='Form_Input'>
-          <select name='cargo'>
-            <option value='' selected=''>Seleccione su cargo</option>
+          <select {...jobTitle}>
+            <option value=''>Seleccione su cargo</option>
             <option value='Director / Gerente de RRHH'>Director / Gerente de RRHH</option>
             <option value='Profesional / Asistente de RRHH'>Profesional / Asistente de RRHH</option>
             <option value='Gerente General / CEO'>Gerente General / CEO</option>
@@ -22,8 +40,8 @@ export const Form = () => {
           </select>
         </div>
         <div className='Form_Input'>
-          <select name='empleados'>
-            <option value='' selected=''>Número de Empleados</option>
+          <select {...employs}>
+            <option value=''>Número de Empleados</option>
             <option value='1-10'>1 - 10</option>
             <option value='11-30'>11 - 30</option>
             <option value='31-50'>31 - 50</option>

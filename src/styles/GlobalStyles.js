@@ -53,6 +53,7 @@ export const GlobalStyles = createGlobalStyle`
         }
     }
     .Main-Button {
+        cursor: pointer;
         position: relative;
         display: block;
         background-color: #011a33;
