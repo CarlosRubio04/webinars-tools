@@ -5,6 +5,7 @@ import { NavBar } from './components/NavBar'
 
 import { Home } from './pages/Home'
 import { Inscription } from './pages/Incription'
+import { Competition } from './pages/Competition'
 
 export const App = () => {
   return (
@@ -14,6 +15,7 @@ export const App = () => {
       <Router>
         <Home path='/' />
         <Inscription path='/inscription' />
+        <Competition path='/competition' />
       </Router>
     </div>
   )
