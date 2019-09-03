@@ -1,6 +1,7 @@
 import React from 'react'
+import { LocationProvider, Router } from '@reach/router'
 import { GlobalStyles } from './styles/GlobalStyles'
-import { Router } from '@reach/router'
+
 import { NavBar } from './components/NavBar'
 
 import { Home } from './pages/Home'
@@ -12,11 +13,13 @@ export const App = () => {
     <div>
       <GlobalStyles />
       <NavBar />
-      <Router>
-        <Home path='/' />
-        <Inscription path='/inscription' />
-        <Competition path='/competition' />
-      </Router>
+      <LocationProvider>
+        <Router>
+          <Home path='/inicio' />
+          <Inscription path='/' />
+          <Competition path='/sorteo' />
+        </Router>
+      </LocationProvider>
     </div>
   )
 }

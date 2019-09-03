@@ -4,9 +4,9 @@
   "description": "Herramientas para mejorar las experiencias dentro de los webinars",
   "main": "index.js",
   "scripts": {
-    "now-build": "npm run build --open",
+    "production": "npm run build",
     "build": "webpack",
-    "dev": "webpack-dev-server --history-api-fallback",
+    "dev": "webpack-dev-server --history-api-fallback --open",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
