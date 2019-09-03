@@ -37,7 +37,7 @@ export const CounterDown = (deadline) => {
         start
           ? <Counter>
             <img src={loadingWebinar} />
-            <h4>Nuestro Webinar Empezará en</h4>
+            <h4>Iniciando Transmisión ...</h4>
           </Counter>
           : <Counter>
             <img src={loadingWebinar} />
