@@ -2,6 +2,10 @@ import React, { useState } from 'react'
 import firebase from '../../firebase'
 
 import { Winner } from '../Winner'
+import { RandomContainer } from './styles'
+
+import normal from '../../assets/static.png'
+import loadingUser from '../../assets/loading.png'
 
 export const Random = () => {
   const [winner, setWinner] = useState('')
@@ -24,15 +28,21 @@ export const Random = () => {
   }
 
   if (winner) {
-    console.log(winner)
     return (
       <Winner winner={winner} />
     )
   }
   if (loading) {
-    return (<p>....</p>)
+    return (
+      <RandomContainer>
+        <img src={loadingUser} />
+      </RandomContainer>
+    )
   }
   return (
-    <button className='Main-Button' onClick={generateNumber}>Go</button>
+    <RandomContainer>
+      <img src={normal} />
+      <button className='Main-Button' onClick={generateNumber}>Iniciar Sorteo</button>
+    </RandomContainer>
   )
 }

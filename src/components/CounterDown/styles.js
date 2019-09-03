@@ -10,9 +10,14 @@ export const Counter = styled.div`
         color: #fff;
     }
 
+    & img {
+        width: 500px;
+    }
+
     .Counter-container {
         position: relative;
         display: flex;
+        justify-content: center;
         color: #fff;
         font-size: 50px;
         font-family: 'roboto';
