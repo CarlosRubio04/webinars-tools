@@ -14,7 +14,7 @@ export const App = () => {
       <GlobalStyles />
       <NavBar />
       <LocationProvider>
-        <Router>
+        <Router basepath='/webinars'>
           <Home path='/inicio' />
           <Inscription path='/' />
           <Competition path='/sorteo' />

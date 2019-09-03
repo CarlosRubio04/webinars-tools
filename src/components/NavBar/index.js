@@ -7,13 +7,13 @@ export const NavBar = () => {
   return (
     <Nav>
       <div className='Nav-Container'>
-        <Link to='/inicio'><img src={logo} /></Link>
+        <Link to='/webinars/inicio'><img src={logo} /></Link>
         <ul>
           <li>
-            <Link to='/'>Inscripción</Link>
+            <Link to='/webinars/'>Inscripción</Link>
           </li>
           <li>
-            <Link to='/sorteo'>Sorteo</Link>
+            <Link to='/webinars/sorteo'>Sorteo</Link>
           </li>
         </ul>
       </div>

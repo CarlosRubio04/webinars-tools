@@ -5,7 +5,7 @@ module.exports = {
     // eslint-disable-next-line no-path-concat
     path: __dirname + '/public',
     filename: 'app.bundle.js',
-    publicPath: '/'
+    publicPath: '/webinars/'
   },
   plugins: [
     new HtmlWebpackPlugin({
