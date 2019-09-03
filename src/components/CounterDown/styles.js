@@ -20,7 +20,7 @@ export const Counter = styled.div`
         justify-content: center;
         color: #fff;
         font-size: 50px;
-        font-family: 'roboto';
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 
         .item {
             padding: 5px;

@@ -91,9 +91,8 @@ export const GlobalStyles = createGlobalStyle`
         cursor: pointer;
         position: relative;
         display: block;
-        background-color: #fff;
-        border: 2px solid #011a33;
-        color: #011a33;
+        background-color: rgb(13, 175, 185);
+        color: rgb(255, 255, 255);
         padding: 8px 24px;
         border-radius: 4px;
         font-size: 22px;

@@ -24,7 +24,7 @@ export const Random = () => {
     const number = Math.floor(Math.random() * (1 - to + 1) + to)
     const user = filterUsers[number]
     console.log(number, user)
-    setTimeout(() => setWinner(user), 2000)
+    setTimeout(() => setWinner(user), 4000)
   }
 
   if (winner) {
@@ -35,6 +35,17 @@ export const Random = () => {
   if (loading) {
     return (
       <RandomContainer>
+        <div className='breeding-rhombus-spinner'>
+          <div className='rhombus child-1' />
+          <div className='rhombus child-2' />
+          <div className='rhombus child-3' />
+          <div className='rhombus child-4' />
+          <div className='rhombus child-5' />
+          <div className='rhombus child-6' />
+          <div className='rhombus child-7' />
+          <div className='rhombus child-8' />
+          <div className='rhombus big' />
+        </div>
         <img src={loadingUser} />
       </RandomContainer>
     )
